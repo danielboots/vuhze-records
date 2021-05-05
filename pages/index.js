@@ -5,6 +5,10 @@ export default function HomePage({ events }) {
   return (
     <Layout>
       <h1>Latest</h1>
+      {events.lengh === 0 && <h3>No events</h3>}
+      {events.map((evt) => (
+        <h3 key={evt.id}>{evt.name}</h3>
+      ))}
     </Layout>
   );
 }
