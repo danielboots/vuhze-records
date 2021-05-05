@@ -15,7 +15,7 @@ export default function EventItem({ evt }) {
 
       <div className={styles.info}>
         <span>
-          {evt.date} at {evt.time}
+          {evt.date} at well you know {evt.time}
         </span>
         <h3>{evt.name}</h3>
       </div>
