@@ -1,6 +1,5 @@
-// import { parseCookies } from "@/helpers/index";
 import moment from "moment";
-import { FaImage, FaIMage } from "react-icons/fa";
+import { FaImage } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
@@ -9,6 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Layout from "@/components/Layout";
 import Modal from "@/components/Modal";
+import ImageUpload from "@/components/ImageUpload";
 import { API_URL } from "@/config/index";
 import styles from "@/styles/Form.module.css";
 
@@ -22,11 +22,9 @@ export default function EditEventPage({ evt }) {
     time: evt.time,
     description: evt.description,
   });
-
   const [imagePreview, setImagePreview] = useState(
     evt.image ? evt.image.formats.thumbnail.url : null
   );
-
   const [showModal, setShowModal] = useState(false);
 
   const router = useRouter();
@@ -47,16 +45,11 @@ export default function EditEventPage({ evt }) {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(values),
     });
 
     if (!res.ok) {
-      if (res.status === 403 || res.status === 401) {
-        toast.error("No token included");
-        return;
-      }
       toast.error("Something Went Wrong");
     } else {
       const evt = await res.json();
@@ -67,6 +60,13 @@ export default function EditEventPage({ evt }) {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
+  };
+
+  const imageUploaded = async (e) => {
+    const res = await fetch(`${API_URL}/events/${evt.id}`);
+    const data = await res.json();
+    setImagePreview(data.image.formats.thumbnail.url);
+    setShowModal(false);
   };
 
   return (
@@ -152,23 +152,26 @@ export default function EditEventPage({ evt }) {
         <input type="submit" value="Update Event" className="btn" />
       </form>
 
-      <h2> Event Image</h2>
+      <h2>Event Image</h2>
       {imagePreview ? (
         <Image src={imagePreview} height={100} width={170} />
       ) : (
         <div>
-          <p>No Image uploaded</p>
+          <p>No image uploaded</p>
         </div>
       )}
 
       <div>
-        <button onClick={() => setShowModal(true)} className="btn-secondary">
+        <button
+          onClick={() => setShowModal(true)}
+          className="btn-secondary btn-icon"
+        >
           <FaImage /> Set Image
         </button>
       </div>
 
       <Modal show={showModal} onClose={() => setShowModal(false)}>
-        Tits
+        <ImageUpload evtId={evt.id} imageUploaded={imageUploaded} />
       </Modal>
     </Layout>
   );
@@ -179,6 +182,8 @@ export async function getServerSideProps({ params: { id } }) {
   const evt = await res.json();
 
   return {
-    props: { evt },
+    props: {
+      evt,
+    },
   };
 }
