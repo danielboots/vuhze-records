@@ -3,9 +3,9 @@ import { useRouter } from "next/router";
 import Header from "./Header";
 import Footer from "./Footer";
 import Showcase from "./Showcase";
+// import InfoBox from './InfoBox'
 import styles from "@/styles/Layout.module.css";
 
-// SEO
 export default function Layout({ title, keywords, description, children }) {
   const router = useRouter();
 
@@ -19,17 +19,16 @@ export default function Layout({ title, keywords, description, children }) {
 
       <Header />
 
-      {/* use router to only show hero showcase on front page */}
       {router.pathname === "/" && <Showcase />}
-      <div className={styles.container}>{children}</div>
 
+      <div className={styles.container}>{children}</div>
       <Footer />
     </div>
   );
 }
 
 Layout.defaultProps = {
-  title: "Vuhze Records | Artist management",
-  description: "Latest Music, from prestigious record labels and artists.",
-  keywords: "EDM, Dance Music, events, work in the music industry.",
+  title: "DJ Events | Find the hottest parties",
+  description: "Find the latest DJ and other musical events",
+  keywords: "music, dj, edm, events",
 };

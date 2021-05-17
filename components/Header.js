@@ -1,33 +1,27 @@
-import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
-import { useContext } from "react";
-import Link from "next/link";
-import Search from "./Search";
-import AuthContext from "@/context/AuthContext";
-import styles from "@/styles/Header.module.css";
+import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa'
+import { useContext } from 'react'
+import Link from 'next/link'
+import Search from './Search'
+import AuthContext from '@/context/AuthContext'
+import styles from '@/styles/Header.module.css'
 
 export default function Header() {
-  const { user, logout } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext)
 
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Link href="/">
-          <a>Vuhze - Records</a>
+        <Link href='/'>
+          <a>DJ Events</a>
         </Link>
       </div>
 
       <Search />
 
       <nav>
-        <li>
-          <Link href="/account/dashboard">
-            <a>Dashboard</a>
-          </Link>
-        </li>
-
         <ul>
           <li>
-            <Link href="/events">
+            <Link href='/events'>
               <a>Events</a>
             </Link>
           </li>
@@ -35,19 +29,19 @@ export default function Header() {
             // If logged in
             <>
               <li>
-                <Link href="/events/add">
+                <Link href='/events/add'>
                   <a>Add Event</a>
                 </Link>
               </li>
               <li>
-                <Link href="/account/dashboard">
+                <Link href='/account/dashboard'>
                   <a>Dashboard</a>
                 </Link>
               </li>
               <li>
                 <button
                   onClick={() => logout()}
-                  className="btn-secondary btn-icon"
+                  className='btn-secondary btn-icon'
                 >
                   <FaSignOutAlt /> Logout
                 </button>
@@ -57,8 +51,8 @@ export default function Header() {
             // If logged out
             <>
               <li>
-                <Link href="/account/login">
-                  <a className="btn-secondary btn-icon">
+                <Link href='/account/login'>
+                  <a className='btn-secondary btn-icon'>
                     <FaSignInAlt /> Login
                   </a>
                 </Link>
@@ -68,5 +62,5 @@ export default function Header() {
         </ul>
       </nav>
     </header>
-  );
+  )
 }

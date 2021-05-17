@@ -10,9 +10,9 @@
   margin-bottom: 10px;
 }
 
-.auth input[type="text"],
-.auth input[type="email"],
-.auth input[type="password"] {
+.auth input[type='text'],
+.auth input[type='email'],
+.auth input[type='password'] {
   display: block;
   width: 100%;
   height: 40px;
@@ -20,7 +20,7 @@
   font-size: 18px;
 }
 
-.auth input[type="submit"] {
+.auth input[type='submit'] {
   margin-top: 20px;
   width: 100%;
   font-size: 17px;
