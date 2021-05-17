@@ -19,6 +19,12 @@ export default function Header() {
       <Search />
 
       <nav>
+        <li>
+          <Link href="/account/dashboard">
+            <a>Dashboard</a>
+          </Link>
+        </li>
+
         <ul>
           <li>
             <Link href="/events">
