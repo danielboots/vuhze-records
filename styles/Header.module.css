@@ -25,13 +25,13 @@
 }
 
 .logo {
-  color: red;
+  color: slategrey;
   font-size: 20px;
   text-transform: uppercase;
 }
 
 .logo a {
-  color: red;
+  color: slategray;
 }
 
 @media (max-width: 768px) {
@@ -52,5 +52,39 @@
 
   .logo {
     margin: 20px 0;
+  }
+}
+
+.hovernav {
+  transition: 0.3s;
+}
+
+.hovernav:hover {
+  transform: translate(0, -2px);
+}
+
+.navlink {
+  font-weight: 600;
+}
+
+.dropdownmenu {
+  background-color: #12192cf2 !important;
+}
+
+.bgdark {
+  background-color: transparent !important;
+}
+
+.bgdark.scrolled {
+  background-color: #12192cf2 !important;
+  transition: 0.75s ease;
+}
+
+@media (max-width: 991px) {
+  .bgdark {
+    background: #12192c !important;
+  }
+  .bgdark.scrolled {
+    background-color: #12192c !important;
   }
 }

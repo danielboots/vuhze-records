@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -8,8 +8,19 @@
 
 html,
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.8;
+  background-color: #f2f6f9;
+}
+
+.brand-font {
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 1.8;
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  right: 10%;
+  color: white;
 }
 
 a {
@@ -27,7 +38,7 @@ h1 {
 
 .btn {
   display: inline-block;
-  background: red;
+  background: #12192c;
   color: #fff;
   padding: 10px 20px;
   cursor: pointer;
@@ -36,7 +47,7 @@ h1 {
 }
 
 .btn:hover {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .btn-secondary {
@@ -63,4 +74,12 @@ h1 {
 
 .btn-icon svg {
   margin-right: 5px;
+}
+
+.hoverup {
+  transition: 0.3s;
+}
+
+.hoverup:hover {
+  transform: translate(0, -2px);
 }

@@ -22,13 +22,14 @@ export default function Layout({ title, keywords, description, children }) {
       {router.pathname === "/" && <Showcase />}
 
       <div className={styles.container}>{children}</div>
+
       <Footer />
     </div>
   );
 }
 
 Layout.defaultProps = {
-  title: "DJ Events | Find the hottest parties",
-  description: "Find the latest DJ and other musical events",
+  title: "Intimacy Records",
+  description: "Record Label",
   keywords: "music, dj, edm, events",
 };

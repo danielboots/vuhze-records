@@ -1,31 +1,56 @@
+.herohome {
+  background: url("/images/hero.png") no-repeat center center fixed;
+  /* background-size: cover; */
+  margin: auto;
+  height: 50vh;
+  background-attachment: fixed;
+  color: #ffffff;
+  position: relative;
+}
+
+.herohome::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* change RGBA to HEX Alpha Mentor Suggestion */
+  background-color: #05101f80;
+}
+
 .showcase {
   height: 300px;
   width: 100%;
-  background: #000 url('/images/showcase.jpg') no-repeat center center;
+  background: #000 url("/images/hero.png") no-repeat center center;
   color: #fff;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 50vh;
+  background-attachment: fixed;
+
   text-align: center;
 }
 
 .showcase::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.034);
 }
 
-.showcase * {
+.herohome * {
   z-index: 20;
 }
 
-.showcase h1 {
-  font-size: 40px;
+.herohome h1 {
+  font-size: 80px;
   margin-bottom: 0;
+  text-align: center;
 }

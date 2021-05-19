@@ -32,7 +32,10 @@ export default function DashboardPage({ events, token }) {
       <div className={styles.dash}>
         <h1>Dashboard</h1>
         <h3>My Events</h3>
-        <p>test</p>
+
+        <button className="btn-secondary btn-icon">
+          <a href="/events/add"> ADD EVENT</a>
+        </button>
 
         {events.map((evt) => (
           <h3>{evt.name}</h3>
