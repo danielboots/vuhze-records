@@ -16,24 +16,54 @@ export default function ArtistPage({ artist }) {
     <Layout>
       <div className={styles.event}>
         <span></span>
-        <h1>{artist.name}</h1>
+        <h1 className="text-center text-uppercase">{artist.name}</h1>
         <ToastContainer />
         {artist.image && (
-          <div className={styles.image}>
-            <Image
+          <div>
+            <img
+              className="img-fluid rounded mx-auto d-block"
+              src={artist.image.formats.small.url}
+            />
+
+            {/* <Image
               src={artist.image.formats.medium.url}
               width={960}
-              height={600}
-            />
+              height={700}
+            /> */}
           </div>
         )}
 
-        <h3>Performers:</h3>
-        <p></p>
-        <h3>Description:</h3>
-        <p></p>
-        <h3>Venue: </h3>
-        <p></p>
+        <h3 className=" text-uppercase">Bio</h3>
+        <p>{artist.tagline}</p>
+        <p>{artist.bio}</p>
+        <h3 className=" text-uppercase">Latest Music</h3>
+        <p>{artist.spotify}</p>
+        <p>{artist.applemusic}</p>
+        <p>{artist.genre}</p>
+        <h3 className=" text-uppercase">Social Media </h3>
+
+        <iframe
+          src={artist.spotifyembed}
+          name="spotify"
+          frameBorder="5"
+          width="100%"
+          height="300"
+        ></iframe>
+
+        <iframe
+          id="youtube-embed"
+          name="youtubeIFrame"
+          width="100%"
+          height="315"
+          src={artist.youtubeembed}
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+        <p>{artist.instagram}</p>
+        <p>{artist.facebook}</p>
+        <p>{artist.twitter}</p>
 
         <Link href="/events">
           <a className={styles.back}>{"<"} Go Back</a>
