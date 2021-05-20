@@ -11,6 +11,8 @@ body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.8;
   background-color: #f2f6f9;
+  height: 100%;
+  position: relative;
 }
 
 .brand-font {
