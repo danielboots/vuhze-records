@@ -25,14 +25,14 @@ export default function Header() {
               <a>Events</a>
             </Link>
           </li>
+          <li className={`${styles.hovernav} ${styles.navlink}`}>
+            <Link href="/artists">
+              <a>Artists</a>
+            </Link>
+          </li>
           {user ? (
             // If logged in
             <>
-              {/* <li>
-                <Link href="/events/add">
-                  <a>Add Event</a>
-                </Link>
-              </li> */}
               <li className={`${styles.hovernav} ${styles.navlink}`}>
                 <Link href="/account/dashboard">
                   <a>Dashboard</a>

@@ -5,17 +5,11 @@ import { API_URL } from "@/config/index";
 export default function ArtistsPage({ artists }) {
   return (
     <Layout>
-      <h1>artists</h1>
+      <h1 className="text-uppercase text-center">artists</h1>
       {artists.length === 0 && <h3>No Artists</h3>}
 
       {artists.map((artists) => (
-        <div>
-          <h2>{artists.name}</h2>
-          <p>{artists.Bio}</p>
-          <h3>{artists.instagram}</h3>
-          <h3>{artists.facebook}</h3>
-          <h3>{artists.web}</h3>
-        </div>
+        <ArtistItem key={artists.id} artists={artists} />
       ))}
     </Layout>
   );

@@ -4,26 +4,24 @@ import { FaPencilAlt, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "@/components/Layout";
-import EventMap from "@/components/EventMap";
+
 import { API_URL } from "@/config/index";
-import styles from "@/styles/Event.module.css";
+import styles from "@/styles/Artists.module.css";
 import { useRouter } from "next/router";
 
-export default function EventPage({ evt }) {
+export default function ArtistPage({ artist }) {
   const router = useRouter();
 
   return (
     <Layout>
       <div className={styles.event}>
-        <span>
-          {new Date(evt.date).toLocaleDateString("en-US")} at {evt.time}
-        </span>
-        <h1>{evt.name}</h1>
+        <span></span>
+        <h1>{artist.name}</h1>
         <ToastContainer />
-        {evt.image && (
+        {artist.image && (
           <div className={styles.image}>
             <Image
-              src={evt.image.formats.medium.url}
+              src={artist.image.formats.medium.url}
               width={960}
               height={600}
             />
@@ -31,13 +29,11 @@ export default function EventPage({ evt }) {
         )}
 
         <h3>Performers:</h3>
-        <p>{evt.performers}</p>
+        <p></p>
         <h3>Description:</h3>
-        <p>{evt.description}</p>
-        <h3>Venue: {evt.venue}</h3>
-        <p>{evt.address}</p>
-
-        <EventMap evt={evt} />
+        <p></p>
+        <h3>Venue: </h3>
+        <p></p>
 
         <Link href="/events">
           <a className={styles.back}>{"<"} Go Back</a>
@@ -51,8 +47,8 @@ export default function EventPage({ evt }) {
 //   const res = await fetch(`${API_URL}/events`)
 //   const events = await res.json()
 
-//   const paths = events.map((evt) => ({
-//     params: { slug: evt.slug },
+//   const paths = events.map((artist) => ({
+//     params: { artist_id: artist.artist_id },
 //   }))
 
 //   return {
@@ -61,25 +57,25 @@ export default function EventPage({ evt }) {
 //   }
 // }
 
-// export async function getStaticProps({ params: { slug } }) {
-//   const res = await fetch(`${API_URL}/events?slug=${slug}`)
+// export async function getStaticProps({ params: { artist_id } }) {
+//   const res = await fetch(`${API_URL}/events?artist_id=${artist_id}`)
 //   const events = await res.json()
 
 //   return {
 //     props: {
-//       evt: events[0],
+//       artist: events[0],
 //     },
 //     revalidate: 1,
 //   }
 // }
 
-export async function getServerSideProps({ query: { slug } }) {
-  const res = await fetch(`${API_URL}/events?slug=${slug}`);
-  const events = await res.json();
+export async function getServerSideProps({ query: { id } }) {
+  const res = await fetch(`${API_URL}/artists?artist_id=${id}`);
+  const artist = await res.json();
+
+  console.log(id);
 
   return {
-    props: {
-      evt: events[0],
-    },
+    props: { artist: artist[0] },
   };
 }
