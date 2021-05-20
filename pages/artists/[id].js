@@ -4,6 +4,7 @@ import { FaPencilAlt, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "@/components/Layout";
+import { FaInstagram, FaFacebookF, FaTwitter } from "react-icons/fa";
 
 import { API_URL } from "@/config/index";
 import styles from "@/styles/Artists.module.css";
@@ -24,23 +25,45 @@ export default function ArtistPage({ artist }) {
               className="img-fluid rounded mx-auto d-block"
               src={artist.image.formats.small.url}
             />
-
-            {/* <Image
-              src={artist.image.formats.medium.url}
-              width={960}
-              height={700}
-            /> */}
           </div>
         )}
 
+        {/* Social Media icons */}
+
+        <div className="text-center">
+          <a href={artist.instagram} target_blank="true">
+            <FaInstagram className="m-3 hoverup" />
+          </a>
+          <a href={artist.facebook} target_blank="true">
+            <FaFacebookF className="m-3  hoverup" />
+          </a>
+
+          <a href={artist.twitter} target_blank="true">
+            <FaTwitter className="m-3 hoverup " />
+          </a>
+        </div>
+
         <h3 className=" text-uppercase">Bio</h3>
-        <p>{artist.tagline}</p>
-        <p>{artist.bio}</p>
-        <h3 className=" text-uppercase">Latest Music</h3>
+        <p className="text-justify">
+          <strong>
+            <hr />
+            <em>{artist.tagline}</em>
+          </strong>
+        </p>
+
+        <p className="text-danger text-right">
+          <strong>
+            {" "}
+            <em>{artist.genre}</em>
+          </strong>
+        </p>
+        <p className="text-justify">{artist.bio}</p>
+
         <p>{artist.spotify}</p>
         <p>{artist.applemusic}</p>
-        <p>{artist.genre}</p>
-        <h3 className=" text-uppercase">Social Media </h3>
+
+        <h3 className=" text-uppercase">Listen </h3>
+        <hr />
 
         <iframe
           src={artist.spotifyembed}
@@ -50,6 +73,8 @@ export default function ArtistPage({ artist }) {
           height="300"
         ></iframe>
 
+        <h3 className=" text-uppercase">Latest Video </h3>
+        <hr />
         <iframe
           id="youtube-embed"
           name="youtubeIFrame"
@@ -60,10 +85,6 @@ export default function ArtistPage({ artist }) {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
-
-        <p>{artist.instagram}</p>
-        <p>{artist.facebook}</p>
-        <p>{artist.twitter}</p>
 
         <Link href="/events">
           <a className={styles.back}>{"<"} Go Back</a>
