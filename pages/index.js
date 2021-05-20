@@ -4,11 +4,14 @@ import EventItem from "@/components/EventItem";
 import Releases from "@/components/Releases";
 import { API_URL } from "@/config/index";
 import Aboutblock from "@/components/Aboutblock";
+import Artists from "@/components/Artists";
+import News from "@/components/News";
 
 export default function HomePage({ events }) {
   return (
     <Layout>
       <Aboutblock />
+      <Artists />
 
       <Releases />
 
@@ -24,6 +27,8 @@ export default function HomePage({ events }) {
           <a className="btn-secondary">View All Events</a>
         </Link>
       )}
+
+      <News />
     </Layout>
   );
 }
