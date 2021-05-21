@@ -36,6 +36,11 @@ export default function Header() {
               <a>Events</a>
             </Link>
           </li>
+          <li className={`${styles.hovernav} ${styles.navlink}`}>
+            <Link href="/news">
+              <a>News</a>
+            </Link>
+          </li>
           {user ? (
             // If logged in
             <>
