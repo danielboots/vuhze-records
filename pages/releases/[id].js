@@ -33,10 +33,22 @@ export default function ReleasePage({ release }) {
           <div>
             <img
               className="img-fluid rounded mx-auto d-block"
-              src={release.image.formats.small.url}
+              src={release.artwork.formats.thumbnail.url}
             />
           </div>
         )}
+
+        <p>{release.trackname}</p>
+        <p>{release.id}</p>
+        <p>{release.artist}</p>
+        <p>{release.writeup}</p>
+        <p>{release.release}</p>
+        <p> {release.itunes}</p>
+        <p>{release.release_id}</p>
+        <p>{release.Genre}</p>
+        <p>{release.publisher}</p>
+        <p> {release.artwork.formats.thumbnail.url}</p>
+        <p>{release.code}</p>
 
         {/* Social Media icons */}
 
