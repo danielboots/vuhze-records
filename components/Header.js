@@ -16,28 +16,34 @@ export default function Header() {
         </Link>
       </div>
 
-      <Search />
+      {/* <Search /> */}
 
       <nav>
         <ul>
-          <li className={`${styles.hovernav} ${styles.navlink}`}>
-            <Link href="/events">
-              <a>Events</a>
-            </Link>
-          </li>
           <li className={`${styles.hovernav} ${styles.navlink}`}>
             <Link href="/artists">
               <a>Artists</a>
             </Link>
           </li>
+          <li className={`${styles.hovernav} ${styles.navlink}`}>
+            <Link href="/releases">
+              <a>Releases</a>
+            </Link>
+          </li>
+
+          <li className={`${styles.hovernav} ${styles.navlink}`}>
+            <Link href="/events">
+              <a>Events</a>
+            </Link>
+          </li>
           {user ? (
             // If logged in
             <>
-              <li className={`${styles.hovernav} ${styles.navlink}`}>
+              {/* <li className={`${styles.hovernav} ${styles.navlink}`}>
                 <Link href="/account/dashboard">
                   <a>Dashboard</a>
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <button
                   onClick={() => logout()}

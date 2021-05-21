@@ -1,23 +1,24 @@
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import EventItem from "@/components/EventItem";
-import Releases from "@/components/Releases";
+
 import { API_URL } from "@/config/index";
 import Aboutblock from "@/components/Aboutblock";
-import Artists from "@/components/Artists";
+import ArtistItem from "@/components/ArtistItem";
 import News from "@/components/News";
 
 export default function HomePage({ events }) {
   return (
     <Layout>
       <Aboutblock />
-      <Artists />
 
-      <Releases />
+      <h3>Artists </h3>
+      <hr />
+      <h3>Latest Releases </h3>
+      <hr />
 
       <h3>Upcoming Events</h3>
       {events.length === 0 && <h3>No events to show</h3>}
-
       {events.map((evt) => (
         <EventItem key={evt.id} evt={evt} />
       ))}
@@ -27,8 +28,9 @@ export default function HomePage({ events }) {
           <a className="btn-secondary">View All Events</a>
         </Link>
       )}
-
+      <hr />
       <News />
+      <hr />
     </Layout>
   );
 }
