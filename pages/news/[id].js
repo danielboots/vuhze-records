@@ -27,18 +27,23 @@ export default function NewsItemPage({ newsitem }) {
     <Layout>
       <div className={styles.event}>
         <span></span>
-        <h1 className="text-center text-uppercase">{newsitem.headline}</h1>
+        <h2 className="text-center text-uppercase">{newsitem.headline}</h2>
         <ToastContainer />
         {newsitem.image && (
-          <div>
-            <img
-              className="img-fluid rounded mx-auto d-block"
-              src={newsitem.image.formats.thumbnail.url}
-            />
+          <div className="rounded mx-auto d-block">
+            <img src={newsitem.image.formats.small.url} />
           </div>
         )}
+        <div>
+          <br />
+        </div>
 
-        <p>{newsitem.writeup}</p>
+        <p className="text-justify">{newsitem.writeup}</p>
+        <p className="text-danger text-center">
+          <strong>
+            <em>{newsitem.tags}</em>
+          </strong>
+        </p>
       </div>
     </Layout>
   );

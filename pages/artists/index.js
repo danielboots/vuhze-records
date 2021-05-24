@@ -3,6 +3,7 @@ import ArtistItem from "@/components/ArtistItem";
 import { API_URL } from "@/config/index";
 
 export default function ArtistsPage({ artists }) {
+  console.log(artists);
   return (
     <Layout>
       <h1 className="text-uppercase text-center">artists</h1>
