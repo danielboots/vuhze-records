@@ -43,14 +43,6 @@ export default function ReleaseItem({ releases }) {
           <a className="btn m-3">View Release</a>
         </Link>
       </div>
-
-      <iframe
-        src={releases.spotifyembed}
-        name="spotify"
-        frameBorder="10"
-        width="100%"
-        height="100"
-      ></iframe>
     </div>
   );
 }

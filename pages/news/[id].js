@@ -17,109 +17,28 @@ import {
 } from "react-icons/fa";
 
 import { API_URL } from "@/config/index";
-import styles from "@/styles/Artists.module.css";
+import styles from "@/styles/NewsItem.module.css";
 import { useRouter } from "next/router";
 
-export default function ArtistPage({ artist }) {
+export default function NewsItemPage({ newsitem }) {
   const router = useRouter();
 
   return (
     <Layout>
       <div className={styles.event}>
         <span></span>
-        <h1 className="text-center text-uppercase">{artist.name}</h1>
+        <h1 className="text-center text-uppercase">{newsitem.headline}</h1>
         <ToastContainer />
-        {artist.image && (
+        {newsitem.image && (
           <div>
             <img
               className="img-fluid rounded mx-auto d-block"
-              src={artist.image.formats.small.url}
+              src={newsitem.image.formats.thumbnail.url}
             />
           </div>
         )}
 
-        {/* Social Media icons */}
-
-        <div className="text-center">
-          <a href={artist.instagram} target_blank="true">
-            <FaInstagram className="m-3 hoverup" />
-          </a>
-          <a href={artist.facebook} target_blank="true">
-            <FaFacebookF className="m-3  hoverup" />
-          </a>
-
-          <a href={artist.twitter} target_blank="true">
-            <FaTwitter className="m-3 hoverup " />
-          </a>
-        </div>
-
-        <h3 className=" text-uppercase mt-4">
-          {" "}
-          <FaBars className="mr-3 hoverup" />
-          Bio
-        </h3>
-        <p className="text-justify">
-          <strong>
-            <hr />
-            <em>{artist.tagline}</em>
-          </strong>
-        </p>
-
-        <p className="text-danger text-right">
-          <strong>
-            {" "}
-            <em>{artist.genre}</em>
-          </strong>
-          <hr />
-        </p>
-        <p className="text-justify">{artist.bio}</p>
-
-        <p>{artist.spotify}</p>
-        <p>{artist.applemusic}</p>
-
-        <h3 className=" text-uppercase mt-4">
-          {" "}
-          <FaSpotify className="mr-3 hoverup" />
-          Listen{" "}
-        </h3>
-        <hr />
-
-        <iframe
-          src={artist.spotifyembed}
-          name="spotify"
-          frameBorder="5"
-          width="100%"
-          height="300"
-        ></iframe>
-
-        <h3 className=" text-uppercase mt-4">
-          <FaYoutube className="mr-3 hoverup" />
-          Latest Video
-        </h3>
-        <hr />
-        <iframe
-          id="youtube-embed"
-          name="youtubeIFrame"
-          width="100%"
-          height="315"
-          src={artist.youtubeembed}
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-        <h3 className=" text-uppercase mt-4">
-          <FaCalendarAlt className="mr-3 hoverup" /> Events{" "}
-        </h3>
-        <hr />
-
-        <h3 className=" text-uppercase mt-4">
-          <FaRegNewspaper className="mr-3 hoverup" /> News{" "}
-        </h3>
-        <hr />
-
-        <Link href="/">
-          <a className={styles.back}>{"<"} Go Back</a>
-        </Link>
+        <p>{newsitem.writeup}</p>
       </div>
     </Layout>
   );
@@ -129,8 +48,8 @@ export default function ArtistPage({ artist }) {
 //   const res = await fetch(`${API_URL}/events`)
 //   const events = await res.json()
 
-//   const paths = events.map((artist) => ({
-//     params: { artist_id: artist.artist_id },
+//   const paths = events.map((newsitem) => ({
+//     params: { newsitem_id: newsitem.newsitem_id },
 //   }))
 
 //   return {
@@ -139,25 +58,25 @@ export default function ArtistPage({ artist }) {
 //   }
 // }
 
-// export async function getStaticProps({ params: { artist_id } }) {
-//   const res = await fetch(`${API_URL}/events?artist_id=${artist_id}`)
+// export async function getStaticProps({ params: { newsitem_id } }) {
+//   const res = await fetch(`${API_URL}/events?newsitem_id=${newsitem_id}`)
 //   const events = await res.json()
 
 //   return {
 //     props: {
-//       artist: events[0],
+//       newsitem: events[0],
 //     },
 //     revalidate: 1,
 //   }
 // }
 
 export async function getServerSideProps({ query: { id } }) {
-  const res = await fetch(`${API_URL}/artists?artist_id=${id}`);
-  const artist = await res.json();
+  const res = await fetch(`${API_URL}/newsitems?newsitem_id=${id}`);
+  const newsitem = await res.json();
 
   console.log(id);
 
   return {
-    props: { artist: artist[0] },
+    props: { newsitem: newsitem[0] },
   };
 }

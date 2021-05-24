@@ -5,7 +5,6 @@ import EventItem from "@/components/EventItem";
 import { API_URL } from "@/config/index";
 import Aboutblock from "@/components/Aboutblock";
 import ArtistItem from "@/components/ArtistItem";
-import News from "@/components/News";
 
 export default function HomePage({ events }) {
   return (
@@ -29,7 +28,7 @@ export default function HomePage({ events }) {
         </Link>
       )}
       <hr />
-      <News />
+
       <hr />
     </Layout>
   );

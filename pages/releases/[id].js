@@ -90,7 +90,6 @@ export default function ReleasePage({ release }) {
         <p>{release.applemusic}</p>
 
         <h3 className=" text-uppercase mt-4">
-          {" "}
           <FaSpotify className="mr-3 hoverup" />
           Listen{" "}
         </h3>

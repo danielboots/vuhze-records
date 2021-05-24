@@ -125,32 +125,6 @@ export default function ArtistPage({ artist }) {
   );
 }
 
-// export async function getStaticPaths() {
-//   const res = await fetch(`${API_URL}/events`)
-//   const events = await res.json()
-
-//   const paths = events.map((artist) => ({
-//     params: { artist_id: artist.artist_id },
-//   }))
-
-//   return {
-//     paths,
-//     fallback: true,
-//   }
-// }
-
-// export async function getStaticProps({ params: { artist_id } }) {
-//   const res = await fetch(`${API_URL}/events?artist_id=${artist_id}`)
-//   const events = await res.json()
-
-//   return {
-//     props: {
-//       artist: events[0],
-//     },
-//     revalidate: 1,
-//   }
-// }
-
 export async function getServerSideProps({ query: { id } }) {
   const res = await fetch(`${API_URL}/artists?artist_id=${id}`);
   const artist = await res.json();

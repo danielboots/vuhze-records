@@ -5,26 +5,34 @@ import styles from "@/styles/NewsItem.module.css";
 export default function NewsItem({ newsitems }) {
   return (
     <div className={styles.event}>
+      <div className={styles.img}>
+        <Image
+          src={
+            newsitems.image
+              ? newsitems.image.formats.small.url
+              : "/images/event-default.png"
+          }
+          width={200}
+          height={200}
+        />
+      </div>
+
       <div className={styles.info}>
-        <h5 className={styles.hoverup}>
-          <strong>Headline:</strong> {newsitems.headline}
-        </h5>
-
-        <p></p>
+        <h3 className={styles.hoverup}>{newsitems.headline}</h3>
+        {/* <p>ID: {newsitems.id}</p> */}
         <p>
-          <strong>Date:</strong> {newsitems.writeup}
+          {" "}
+          <em>{newsitems.writeup}</em>
         </p>
-        <p>
-          <strong>Genre: </strong>
+
+        <span className={`${styles.genre} ${styles.hoverup}`}>
           {newsitems.tags}
-        </p>
-
-        <span className={`${styles.genre} ${styles.hoverup}`}></span>
+        </span>
       </div>
 
       <div className={styles.link}>
-        <Link href={`/newsitems/${newsitems.newsitem_id}`}>
-          <a className="btn m-3">View article</a>
+        <Link href={`/news/${newsitems.newsitem_id}`}>
+          <a className="btn m-3">Read More</a>
         </Link>
       </div>
     </div>
