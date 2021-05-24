@@ -16,22 +16,29 @@ export default function HomePage({ events, artists, releases }) {
 
       <h3>Artists - our artists</h3>
 
-      {/* {artists.length === 0 && <h3>No Artists to show</h3>}
+      {artists.length === 0 && <h3>No Artists to show</h3>}
+
       {artists.map((artist) => (
+        <p key={artist.id} artist={artist}>
+          {artist.name}
+        </p>
+      ))}
+
+      {/* {artists.map((artist) => (
         <ArtistItem key={artist.id} artist={artist} />
-      ))} 
+      ))}  
 
       {artists.length > 0 && (
         <Link href="/artists">
           <a className="btn-secondary">View All Artists</a>
         </Link>
-      )} */}
+      )}  */}
 
       <h3>Latest Releases </h3>
       <hr />
 
       <h3>Upcoming Events</h3>
-      {/* {events.length === 0 && <h3>No events to show</h3>}
+      {events.length === 0 && <h3>No events to show</h3>}
       {events.map((evt) => (
         <EventItem key={evt.id} evt={evt} />
       ))}
@@ -40,7 +47,7 @@ export default function HomePage({ events, artists, releases }) {
         <Link href="/events">
           <a className="btn-secondary">View All Events</a>
         </Link>
-      )} */}
+      )}
     </Layout>
   );
 }
