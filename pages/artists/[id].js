@@ -26,7 +26,6 @@ export default function ArtistPage({ artist }) {
   return (
     <Layout>
       <div className={styles.event}>
-        <span></span>
         <h1 className="text-center text-uppercase">{artist.name}</h1>
         <ToastContainer />
         {artist.image && (
@@ -67,7 +66,6 @@ export default function ArtistPage({ artist }) {
 
         <p className="text-danger text-right">
           <strong>
-            {" "}
             <em>{artist.genre}</em>
           </strong>
           <hr />
