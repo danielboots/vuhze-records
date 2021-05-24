@@ -20,7 +20,8 @@ export default function HomePage({ events, artists, releases }) {
 
       {artists.map((artist) => (
         <p key={artist.id} artist={artist}>
-          {artist.name}
+          <strong>{artist.name}</strong> <br />
+          {artist.genre}
         </p>
       ))}
 
@@ -34,7 +35,18 @@ export default function HomePage({ events, artists, releases }) {
         </Link>
       )}  */}
 
-      <h3>Latest Releases </h3>
+      <hr />
+
+      <h3>Latest Releases</h3>
+
+      {releases.length === 0 && <h3>No Releases to show</h3>}
+
+      {releases.map((release) => (
+        <p key={release.id} release={release}>
+          <strong>{release.trackname}</strong> <br />
+        </p>
+      ))}
+
       <hr />
 
       <h3>Upcoming Events</h3>
