@@ -113,6 +113,34 @@ h1 {
   flex: 2;
 }
 
+/* flex styles */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+}
+.item {
+  flex: 0 0 auto;
+  margin: 10px;
+}
+
+.dist {
+  height: 50px;
+  width: auto;
+  margin: 5px 100px;
+}
+
+.brandbg {
+  background-color: #1f2937;
+}
+
+.whitefont {
+  color: whitesmoke;
+}
+
 @media (max-width: 600px) {
   .box {
     flex-direction: column;

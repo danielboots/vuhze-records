@@ -13,6 +13,7 @@ function Aboutblock() {
         music and also to nuture up and coming talent. Your voice expresses your
         heart – share it, sing it, shout it.
       </p>
+      <img className={styles.img} src="images/sig.png" alt="" />
     </div>
   );
 }

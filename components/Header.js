@@ -41,6 +41,11 @@ export default function Header() {
               <a>News</a>
             </Link>
           </li>
+          <li className={`${styles.hovernav} ${styles.navlink}`}>
+            <Link href="/studios">
+              <a>Studios</a>
+            </Link>
+          </li>
           {user ? (
             // If logged in
             <>
@@ -49,14 +54,14 @@ export default function Header() {
                   <a>Dashboard</a>
                 </Link>
               </li> */}
-              <li>
+              {/* <li>
                 <button
                   onClick={() => logout()}
                   className="btn-secondary btn-icon font-weight-bold"
                 >
                   <FaSignOutAlt /> Logout
                 </button>
-              </li>
+              </li> */}
             </>
           ) : (
             // If logged out

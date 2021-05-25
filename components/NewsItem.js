@@ -18,10 +18,11 @@ export default function NewsItem({ newsitems }) {
       </div>
 
       <div className={styles.info}>
-        <h3 className={styles.hoverup}>{newsitems.headline}</h3>
+        <h5 className={styles.hoverup}>
+          <strong>{newsitems.headline}</strong>{" "}
+        </h5>
         {/* <p>ID: {newsitems.id}</p> */}
         <p>
-          {" "}
           <em>{newsitems.writeup}</em>
         </p>
 
@@ -32,7 +33,7 @@ export default function NewsItem({ newsitems }) {
 
       <div className={styles.link}>
         <Link href={`/news/${newsitems.newsitem_id}`}>
-          <a className="btn m-3">Read More</a>
+          <a className="btn btn-secondary btn-sm ">Read More</a>
         </Link>
       </div>
     </div>

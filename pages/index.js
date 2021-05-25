@@ -4,9 +4,9 @@ import EventItem from "@/components/EventItem";
 import ArtistItem from "@/components/ArtistItem";
 import NewsItem from "@/components/NewsItem";
 import ReleaseItem from "@/components/ReleaseItem";
+import Aboutblock from "@/components/Aboutblock";
 
 import { API_URL } from "@/config/index";
-import Aboutblock from "@/components/Aboutblock";
 
 export default function HomePage({ events, artists, releases, newsitems }) {
   console.log(events);
@@ -55,6 +55,23 @@ export default function HomePage({ events, artists, releases, newsitems }) {
         </div>
       )}
 
+      <div className="shadow p-3 mb-5 brandbg rounded whitefont ">
+        <h4 className="text-center text-uppercase ">
+          <strong>Media</strong>
+        </h4>
+        <div className="container p-4 ">
+          <iframe
+            width="100%"
+            height=""
+            src="https://www.youtube.com/embed/a-2kSM1mmBM"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
       <div className="shadow p-3 mb-5 bg-white rounded">
         <h4 className="text-center text-uppercase">
           <strong>Latest News</strong>
@@ -72,9 +89,36 @@ export default function HomePage({ events, artists, releases, newsitems }) {
         </div>
       )}
 
+      <div className="shadow p-3 mb-5 brandbg rounded whitefont ">
+        <h4 className="text-center text-uppercase ">
+          <strong>Get Signed</strong>
+        </h4>
+        <div className="container ">
+          <div className="text-justify text-center">
+            <h5>
+              ”Your voice expresses your heart – share it, sing it, shout it.”
+            </h5>
+            <div>
+              <p className="text-justify text-center p-3 ">
+                Do you want to develop as an artist with an already established
+                brand and international pop superstar? Well heres your chance,
+                simply submit your demos to our A&R team and you could get
+                signed to INTIMACY RECORDS with a full Artist development
+                programme, Remix Packages and worldwide releases.
+              </p>
+            </div>
+            <div className="m-3 text-center ">
+              <Link href="/contact">
+                <a className="btn  btn-light">SUBMIT</a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="shadow p-3 mb-5 bg-white rounded">
         <h4 className="text-center text-uppercase">
-          <strong>Events</strong>{" "}
+          <strong>Events</strong>
         </h4>
       </div>
       {events.length === 0 && <h3>No events to show</h3>}
@@ -88,6 +132,20 @@ export default function HomePage({ events, artists, releases, newsitems }) {
           </Link>
         </div>
       )}
+
+      <div className="shadow p-3 mb-5 bg-white rounded">
+        <h4 className="text-center text-uppercase">
+          <strong>Proudly Distributed by</strong>
+        </h4>
+        <div className="container">
+          <div className="item ">
+            <img className="dist" src="images/sony.png" alt="" />
+          </div>
+          <div className="item">
+            <img className="dist" src="images/orchard.jpg" alt="" />
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }
