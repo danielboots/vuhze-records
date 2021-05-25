@@ -40,7 +40,7 @@ export default function ReleaseItem({ releases }) {
 
       <div className={styles.link}>
         <Link href={`/releases/${releases.release_id}`}>
-          <a className="btn m-3">View Release</a>
+          <a className="btn btn-secondary btn-sm">View Release</a>
         </Link>
       </div>
     </div>

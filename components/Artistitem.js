@@ -27,7 +27,7 @@ export default function ArtistItem({ artists }) {
 
       <div className={styles.link}>
         <Link href={`/artists/${artists.artist_id}`}>
-          <a className="btn m-3">View Artist</a>
+          <a className="btn btn-secondary btn-sm">View Artist</a>
         </Link>
       </div>
     </div>
