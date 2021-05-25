@@ -2,77 +2,91 @@ import Link from "next/link";
 import Layout from "@/components/Layout";
 import EventItem from "@/components/EventItem";
 import ArtistItem from "@/components/ArtistItem";
+import NewsItem from "@/components/NewsItem";
+import ReleaseItem from "@/components/ReleaseItem";
+
 import { API_URL } from "@/config/index";
 import Aboutblock from "@/components/Aboutblock";
 
-export default function HomePage({ events, artists, releases }) {
+export default function HomePage({ events, artists, releases, newsitems }) {
   console.log(events);
   console.log(artists);
   console.log(releases);
+  console.log(newsitems);
 
   return (
     <Layout>
       <Aboutblock />
 
-      <h3>Artists</h3>
+      {/* <div className="box">
+        <h3>Artists</h3>
+        {artists.length === 0 && <h3>No Artists to show</h3>}
+        {artists.map((artist) => (
+          <div>
+            <p key={artist.id} artist={artist}>
+              <strong>{artist.name}</strong> <br />
+              {artist.genre}
+            </p>
 
-      {artists.length === 0 && <h3>No Artists to show</h3>}
+            <img className="w-25 " src={artist.image.formats.small.url} />
+          </div>
+        ))}
+        {artists.length > 0 && (
+          <Link href="/artists">
+            <a className="btn-secondary">View All Artists</a>
+          </Link>
+        )}
+      </div> */}
 
-      {artists.map((artist) => (
-        <p key={artist.id} artist={artist}>
-          <strong>{artist.name}</strong> <br />
-          {artist.genre}
-        </p>
-      ))}
-
-      {artists.length > 0 && (
-        <Link href="/artists">
-          <a className="btn-secondary">View All Artists</a>
-        </Link>
-      )}
-
-      {/* {artists.map((artist) => (
-        <ArtistItem key={artist.id} artist={artist} />
-      ))}  
-
-      {artists.length > 0 && (
-        <Link href="/artists">
-          <a className="btn-secondary">View All Artists</a>
-        </Link>
-      )}  */}
-
-      <hr />
-
-      <h3>Latest Release</h3>
-
-      {releases.length === 0 && <h3>No Releases to show</h3>}
-
-      {releases.map((release) => (
-        <div>
-          <p key={release.id} release={release}>
-            <strong>{release.trackname}</strong> <br />
-          </p>
-          <p>{release.writeup}</p>
-        </div>
+      <div className="shadow p-3 mb-5 bg-white rounded">
+        <h4 className="text-center text-uppercase">
+          <strong>Latest Release</strong>{" "}
+        </h4>
+      </div>
+      {releases.length === 0 && <h3>No Releases</h3>}
+      {releases.map((releases) => (
+        <ReleaseItem key={releases.id} releases={releases} />
       ))}
       {releases.length > 0 && (
-        <Link href="/releases">
-          <a className="btn-secondary">View All Releases</a>
-        </Link>
+        <div className="m-3 text-left ">
+          <Link href="/news">
+            <a className="btn-secondary ">All Releases</a>
+          </Link>
+        </div>
       )}
 
-      <hr />
+      <div className="shadow p-3 mb-5 bg-white rounded">
+        <h4 className="text-center text-uppercase">
+          <strong>Latest News</strong>
+        </h4>
+      </div>
+      {newsitems.length === 0 && <h3>No News to show</h3>}
+      {newsitems.map((newsitems) => (
+        <NewsItem key={newsitems.id} newsitems={newsitems} />
+      ))}
+      {newsitems.length > 0 && (
+        <div className="m-3 text-left ">
+          <Link href="/news">
+            <a className="btn-secondary">All News</a>
+          </Link>
+        </div>
+      )}
 
-      <h3>Events</h3>
+      <div className="shadow p-3 mb-5 bg-white rounded">
+        <h4 className="text-center text-uppercase">
+          <strong>Events</strong>{" "}
+        </h4>
+      </div>
       {events.length === 0 && <h3>No events to show</h3>}
       {events.map((evt) => (
         <EventItem key={evt.id} evt={evt} />
       ))}
-
       {events.length > 0 && (
-        <Link href="/events">
-          <a className="btn-secondary">View All Events</a>
-        </Link>
+        <div className="m-3 text-left ">
+          <Link href="/events">
+            <a className="btn-secondary">View All Events</a>
+          </Link>
+        </div>
       )}
     </Layout>
   );
@@ -81,18 +95,20 @@ export default function HomePage({ events, artists, releases }) {
 // Bring in multiple api routes, artists, events test.
 
 export async function getServerSideProps() {
-  const [eventRes, artistRes, releaseRes] = await Promise.all([
-    await fetch(`${API_URL}/events?_sort=date:ASC&_limit=3`),
+  const [eventRes, artistRes, releaseRes, newsitemRes] = await Promise.all([
+    await fetch(`${API_URL}/events?_sort=date:ASC&_limit=1`),
     await fetch(`${API_URL}/artists?_limit=3`),
     await fetch(`${API_URL}/releases?_limit=3`),
+    await fetch(`${API_URL}/newsitems?_limit=3`),
   ]);
-  const [events, artists, releases] = await Promise.all([
+  const [events, artists, releases, newsitems] = await Promise.all([
     eventRes.json(),
     artistRes.json(),
     releaseRes.json(),
+    newsitemRes.json(),
   ]);
 
-  return { props: { events, artists, releases } };
+  return { props: { events, artists, releases, newsitems } };
 }
 
 // export async function getServerSideProps() {
