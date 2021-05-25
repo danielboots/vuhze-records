@@ -4,15 +4,23 @@ import EventItem from "@/components/EventItem";
 import ArtistItem from "@/components/ArtistItem";
 import NewsItem from "@/components/NewsItem";
 import ReleaseItem from "@/components/ReleaseItem";
+import StudioItem from "@/components/StudioItem";
 import Aboutblock from "@/components/Aboutblock";
 
 import { API_URL } from "@/config/index";
 
-export default function HomePage({ events, artists, releases, newsitems }) {
+export default function HomePage({
+  events,
+  artists,
+  releases,
+  newsitems,
+  studios,
+}) {
   console.log(events);
   console.log(artists);
   console.log(releases);
   console.log(newsitems);
+  console.log(studios);
 
   return (
     <Layout>
@@ -40,8 +48,10 @@ export default function HomePage({ events, artists, releases, newsitems }) {
 
       <div className="shadow p-3 mb-5 bg-white rounded">
         <h4 className="text-center text-uppercase">
-          <strong>Latest Release</strong>{" "}
+          <strong>Latest Release :</strong>
         </h4>
+        <h5 className="text-center text-danger"> {releases[0].artist}</h5>
+        <h6 className="text-center text-danger">{releases[0].release}</h6>
       </div>
       {releases.length === 0 && <h3>No Releases</h3>}
       {releases.map((releases) => (
@@ -153,20 +163,23 @@ export default function HomePage({ events, artists, releases, newsitems }) {
 // Bring in multiple api routes, artists, events test.
 
 export async function getServerSideProps() {
-  const [eventRes, artistRes, releaseRes, newsitemRes] = await Promise.all([
-    await fetch(`${API_URL}/events?_sort=date:ASC&_limit=1`),
-    await fetch(`${API_URL}/artists?_limit=3`),
-    await fetch(`${API_URL}/releases?_limit=3`),
-    await fetch(`${API_URL}/newsitems?_limit=3`),
-  ]);
-  const [events, artists, releases, newsitems] = await Promise.all([
+  const [eventRes, artistRes, releaseRes, newsitemRes, studioRes] =
+    await Promise.all([
+      await fetch(`${API_URL}/events?_sort=date:ASC&_limit=1`),
+      await fetch(`${API_URL}/artists?_limit=3`),
+      await fetch(`${API_URL}/releases?_limit=3`),
+      await fetch(`${API_URL}/newsitems?_limit=3`),
+      await fetch(`${API_URL}/studios?_limit=2`),
+    ]);
+  const [events, artists, releases, newsitems, studios] = await Promise.all([
     eventRes.json(),
     artistRes.json(),
     releaseRes.json(),
     newsitemRes.json(),
+    studioRes.json(),
   ]);
 
-  return { props: { events, artists, releases, newsitems } };
+  return { props: { events, artists, releases, newsitems, studios } };
 }
 
 // export async function getServerSideProps() {

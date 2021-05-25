@@ -13,7 +13,7 @@ export default function StudioMap({ studio }) {
     longitude: -73.935242,
     width: "100%",
     height: "500px",
-    zoom: 12,
+    zoom: 18,
   });
 
   useEffect(() => {
