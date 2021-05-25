@@ -105,7 +105,7 @@ export default function ArtistPage({ artist }) {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
-        <h3 className=" text-uppercase mt-4">
+        {/* <h3 className=" text-uppercase mt-4">
           <FaCalendarAlt className="mr-3 hoverup" /> Events{" "}
         </h3>
         <hr />
@@ -113,7 +113,7 @@ export default function ArtistPage({ artist }) {
         <h3 className=" text-uppercase mt-4">
           <FaRegNewspaper className="mr-3 hoverup" /> News{" "}
         </h3>
-        <hr />
+        <hr /> */}
 
         <Link href="/">
           <a className={styles.back}>{"<"} Go Back</a>

@@ -12,8 +12,11 @@ export default function ReleaseItem({ releases }) {
               ? releases.artwork.formats.thumbnail.url
               : "/images/event-default.png"
           }
-          width={200}
-          height={200}
+          layout="responsive"
+          objectFit="contain"
+          quality={65}
+          width={100}
+          height={100}
         />
       </div>
 

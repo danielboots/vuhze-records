@@ -4,6 +4,7 @@ import { FaPencilAlt, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "@/components/Layout";
+import StudioMap from "@/components/StudioMap";
 import {
   FaInstagram,
   FaFacebookF,
@@ -52,6 +53,7 @@ export default function StudioItemPage({ studio }) {
           <a className={styles.back}> Go Back</a>
         </Link>
       </div>
+      <StudioMap studio={studio} />
     </Layout>
   );
 }

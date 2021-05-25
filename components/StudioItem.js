@@ -6,15 +6,18 @@ export default function StudioItem({ studios }) {
   return (
     <div className={styles.event}>
       <div className={styles.img}>
-        {/* <Image
+        <Image
           src={
             studios.image
-              ? studios.image.formats.thumbnail.url
+              ? studios.image.formats.medium.url
               : "/images/event-default.png"
           }
-          width={170}
+          layout="responsive"
+          objectFit="contain"
+          quality={65}
+          width={100}
           height={100}
-        /> */}
+        />
       </div>
 
       <div className={styles.info}>
