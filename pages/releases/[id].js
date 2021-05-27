@@ -5,15 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import Layout from "@/components/Layout";
 import {
-  FaInstagram,
-  FaFacebookF,
-  FaTwitter,
   FaSpotify,
   FaApple,
   FaYoutube,
   FaBars,
   FaRegNewspaper,
-  FaCalendarAlt,
 } from "react-icons/fa";
 
 import { API_URL } from "@/config/index";
@@ -26,74 +22,59 @@ export default function ReleasePage({ release }) {
   return (
     <Layout>
       <div className={styles.event}>
-        <span></span>
-        <h1 className="text-center text-uppercase">{release.trackname}</h1>
+        <h3 className="text-uppercase text-center">
+          Intimacy Records {release.code}: <br />
+          <strong>{release.trackname}</strong>
+        </h3>
+
         <ToastContainer />
-        {release.image && (
+        {release.artwork && (
           <div>
             <img
               className="img-fluid rounded mx-auto d-block"
-              src={release.artwork.formats.thumbnail.url}
+              src={release.artwork.formats.medium.url}
             />
           </div>
         )}
 
-        <p>{release.trackname}</p>
-        <p>{release.id}</p>
-        <p>{release.artist}</p>
-        <p>{release.writeup}</p>
-        <p>{release.release}</p>
-        <p> {release.itunes}</p>
-        <p>{release.release_id}</p>
-        <p>{release.Genre}</p>
-        <p>{release.publisher}</p>
-        <p> {release.artwork.formats.thumbnail.url}</p>
-        <p>{release.code}</p>
-
-        {/* Social Media icons */}
-
-        <div className="text-center">
-          <a href={release.instagram} target_blank="true">
-            <FaInstagram className="m-3 hoverup" />
-          </a>
-          <a href={release.facebook} target_blank="true">
-            <FaFacebookF className="m-3  hoverup" />
-          </a>
-
-          <a href={release.twitter} target_blank="true">
-            <FaTwitter className="m-3 hoverup " />
-          </a>
-        </div>
-
-        <h3 className=" text-uppercase mt-4">
-          {" "}
+        <h4 className=" text-uppercase mt-4">
           <FaBars className="mr-3 hoverup" />
-          Bio
-        </h3>
-        <p className="text-justify">
-          <strong>
-            <hr />
-            <em>{release.tagline}</em>
-          </strong>
-        </p>
+          <strong>RELEASE INFO</strong>
+        </h4>
 
-        <p className="text-danger text-right">
-          <strong>
-            {" "}
-            <em>{release.genre}</em>
-          </strong>
-          <hr />
-        </p>
-        <p className="text-justify">{release.bio}</p>
+        <ul className="unstyled p-3">
+          <li>
+            <strong>Artists:</strong> {release.artist}
+          </li>
+          <li>
+            <strong>Trackname:</strong> {release.trackname}
+          </li>
+          <li>
+            <strong>Genre:</strong>
+            <span className="text-danger">
+              <strong>
+                <em>{release.Genre}</em>
+              </strong>
+            </span>
+          </li>
+          <li>
+            <strong>Release Code:</strong> {release.code}
+          </li>
+          <li>
+            <strong>Publisher Info:</strong> {release.publisher}
+          </li>
+        </ul>
 
-        <p>{release.spotify}</p>
-        <p>{release.applemusic}</p>
+        <hr />
+        <h4 className="text-uppercase text-center ">
+          <strong>{release.headline}</strong>
+        </h4>
+        <p>{release.writeup}</p>
 
         <h3 className=" text-uppercase mt-4">
           <FaSpotify className="mr-3 hoverup" />
-          Listen{" "}
+          <strong>Listen</strong>
         </h3>
-        <hr />
 
         <iframe
           src={release.spotifyembed}
@@ -105,9 +86,9 @@ export default function ReleasePage({ release }) {
 
         <h3 className=" text-uppercase mt-4">
           <FaYoutube className="mr-3 hoverup" />
-          Latest Video{" "}
+          <strong>Video</strong>
         </h3>
-        <hr />
+
         <iframe
           id="youtube-embed"
           name="youtubeIFrame"
@@ -118,15 +99,6 @@ export default function ReleasePage({ release }) {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
-        <h3 className=" text-uppercase mt-4">
-          <FaCalendarAlt className="mr-3 hoverup" /> Events{" "}
-        </h3>
-        <hr />
-
-        <h3 className=" text-uppercase mt-4">
-          <FaRegNewspaper className="mr-3 hoverup" /> News{" "}
-        </h3>
-        <hr />
 
         <Link href="/">
           <a className={styles.back}>{"<"} Go Back</a>
@@ -135,32 +107,6 @@ export default function ReleasePage({ release }) {
     </Layout>
   );
 }
-
-// export async function getStaticPaths() {
-//   const res = await fetch(`${API_URL}/events`)
-//   const events = await res.json()
-
-//   const paths = events.map((release) => ({
-//     params: { release_id: release.release_id },
-//   }))
-
-//   return {
-//     paths,
-//     fallback: true,
-//   }
-// }
-
-// export async function getStaticProps({ params: { release_id } }) {
-//   const res = await fetch(`${API_URL}/events?release_id=${release_id}`)
-//   const events = await res.json()
-
-//   return {
-//     props: {
-//       release: events[0],
-//     },
-//     revalidate: 1,
-//   }
-// }
 
 export async function getServerSideProps({ query: { id } }) {
   const res = await fetch(`${API_URL}/releases?release_id=${id}`);

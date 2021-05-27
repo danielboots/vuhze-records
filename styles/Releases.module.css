@@ -18,3 +18,14 @@
   /* change RGBA to HEX Alpha Mentor Suggestion */
   background-color: #05101f69;
 }
+
+.event {
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  padding: 15px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 5px;
+}
