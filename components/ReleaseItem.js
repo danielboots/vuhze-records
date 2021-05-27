@@ -28,6 +28,9 @@ export default function ReleaseItem({ releases }) {
           <strong>Title:</strong> {releases.trackname}
         </p>
         <p>
+          <strong>Extract:</strong> {releases.headline}
+        </p>
+        <p>
           <strong>Code:</strong> {releases.code}
         </p>
         <p>

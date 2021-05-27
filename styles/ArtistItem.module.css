@@ -12,6 +12,7 @@
 .img {
   flex: 1;
   margin: 10px;
+  max-width: 150px;
 }
 
 .info {

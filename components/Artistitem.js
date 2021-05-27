@@ -21,7 +21,7 @@ export default function ArtistItem({ artists }) {
       </div>
 
       <div className={styles.info}>
-        <h3 className={styles.hoverup}>{artists.name}</h3>
+        <h4 className={styles.hoverup}>{artists.name}</h4>
         <p>{artists.tagline}</p>
         <span className={`${styles.genre} ${styles.hoverup}`}>
           {artists.genre}

@@ -1,11 +1,18 @@
 import Layout from "@/components/Layout";
 import Link from "next/link";
 import StudioItem from "@/components/StudioItem";
+import styles from "@/styles/Studio.module.css";
 import { API_URL } from "@/config/index";
 
 export default function StudiosPage({ studios }) {
   return (
     <Layout>
+      <div className={styles.herohome}>
+        <h1 className="brand-font text-uppercase text-center">
+          <strong>Studios / Services</strong>
+        </h1>
+        <div className={styles.container}></div>
+      </div>
       <div className="shadow p-3 mb-5 bg-white rounded  ">
         <h4 className="text-center text-uppercase ">
           <strong>Music Production Services </strong>
@@ -23,6 +30,53 @@ export default function StudiosPage({ studios }) {
                 facilities and studios are located in the north of the UK, and
                 in Geneva Switzerland with accomodation available.
               </p>
+            </div>
+
+            <div className="text-left ">
+              <ul className="list-unstyled">
+                <li>
+                  <strong>Music Production</strong>
+                  <p>
+                    We offer a full music production service, from initial
+                    concept to final mixed and mastered track.
+                  </p>
+                </li>
+                <hr />
+                <li>
+                  <strong>Remix</strong>
+                  <p>
+                    REMIX is perfect for when you already have a great track but
+                    you need to attract the attention of a wide range of DJs.
+                  </p>
+                </li>
+                <hr />
+                <li>
+                  <strong>Mixdown</strong>
+                  <p>
+                    This service allows our clients to take their productions to
+                    the next level.
+                  </p>
+                </li>
+                <hr />
+                <li>
+                  <strong>Mastering</strong>
+                  <p>
+                    Mastering is the final step in perfecting your record. Let
+                    us add the polish and punch needed.
+                  </p>
+                </li>
+                <hr />
+                <li>
+                  <strong>Consultancy and Distribution</strong>
+                  <p>
+                    Our expert team can aid you to launch your music career with
+                    our Consultancy and full track promotion and distribution
+                    services. We offer a full music production service, from
+                    initial concept to final mixed and mastered track.
+                  </p>
+                </li>
+                <hr />
+              </ul>
             </div>
             <div className="m-3 text-center ">
               <Link href="/contact">

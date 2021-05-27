@@ -28,32 +28,58 @@ export default function StudioItemPage({ studio }) {
   return (
     <Layout>
       <div className={styles.event}>
-        <h3>{studio.name}</h3>
-        <p>{studio.description}</p>
+        <h3 className="text-uppercase text-center">
+          <strong>{studio.name}</strong>
+        </h3>
+
         {studio.image && (
           <div>
             <img
-              className="img-fluid rounded mx-auto d-block"
+              className="img-fluid rounded mx-auto d-block py-5"
               src={studio.image.formats.small.url}
             />
           </div>
         )}
+        <p className="text-justify p-3">{studio.description}</p>
 
-        <h4>Gallery</h4>
+        <h4 className="text-uppercase ">
+          <strong>Gallery:</strong>
+        </h4>
 
-        <img src={studio.gallery[0].formats.small.url} alt="image1" />
-        {/* <img src={studio.gallery[1].formats.small.url} alt="image2" />
-        <img src={studio.gallery[2].formats.small.url} alt="image3" />
-        <img src={studio.gallery[3].formats.small.url} alt="image4" />
-        <img src={studio.gallery[4].formats.small.url} alt="image5" />
-        <img src={studio.gallery[5].formats.small.url} alt="image6" /> */}
+        <div className={styles.row}>
+          <div className={styles.column}>
+            <img src={studio.gallery[0].formats.small.url} alt="image1" />
+            <img src={studio.gallery[1].formats.small.url} alt="image2" />
+            <img src={studio.gallery[2].formats.small.url} alt="image3" />
+            <img src={studio.gallery[3].formats.small.url} alt="image4" />
+            <img src={studio.gallery[4].formats.small.url} alt="image5" />
+          </div>
+        </div>
 
-        <h6 className="text-center">Address: {studio.address}</h6>
+        <div className="my-5">
+          <h4 className="text-uppercase">
+            <strong>Kitlist:</strong>
+          </h4>
+          <h6>Hardware</h6>
+          <p>{studio.hardware}</p>
+
+          <h6>Software</h6>
+          <p>{studio.software}</p>
+          <h6>Instruments</h6>
+          <p>{studio.instruments}</p>
+        </div>
+
+        <div className="my-5">
+          <h4 className="text-uppercase">
+            <strong>Find us:</strong>{" "}
+          </h4>
+          <h6 className="text-left">Address: {studio.address}</h6>
+        </div>
+        <StudioMap studio={studio} />
         <Link href="/studios">
           <a className={styles.back}> Go Back</a>
         </Link>
       </div>
-      <StudioMap studio={studio} />
     </Layout>
   );
 }

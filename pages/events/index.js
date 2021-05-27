@@ -1,12 +1,19 @@
 import Layout from "@/components/Layout";
 import EventItem from "@/components/EventItem";
 import Pagination from "@/components/Pagination";
+import styles from "@/styles/Event.module.css";
 import { API_URL, PER_PAGE } from "@/config/index";
 
 export default function EventsPage({ events, page, total }) {
   return (
     <Layout>
-      <h1>Events</h1>
+      <div className={styles.herohome}>
+        <h1 className="brand-font text-uppercase text-center">
+          <strong>Events</strong>
+        </h1>
+        <div className={styles.container}></div>
+      </div>
+
       {events.length === 0 && <h3>No events to show</h3>}
 
       {events.map((evt) => (
