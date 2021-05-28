@@ -23,9 +23,9 @@ export default function ArtistPage({ artist }) {
     <Layout>
       <div className={styles.event}>
         <h3 className="text-uppercase text-center">
-          Intimacy Records {artist.code}: <br />
-          <strong>{artist.trackname}</strong>
+          Intimacy Records {artist.name}: <br />
         </h3>
+        <p>{artist.tagline}</p>
 
         <ToastContainer />
         {artist.image && (
@@ -44,10 +44,10 @@ export default function ArtistPage({ artist }) {
 
         <ul className="unstyled p-3">
           <li>
-            <strong>Artists Name:</strong> {artist.name}
+            <strong>Name:</strong> {artist.name}
           </li>
           <li>
-            <strong>Tagline</strong> {artist.tagline}
+            <strong>Tagline:</strong> {artist.tagline}
           </li>
           <li>
             <strong>Genre:</strong>
