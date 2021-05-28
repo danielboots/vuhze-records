@@ -17,9 +17,11 @@ export default function ArtistsPage({ artists }) {
       <div className={styles.container}></div>
       {releases.length === 0 && <h3>No artists</h3>}
 
-      {artists.map((artists) => (
+      <h3>test</h3>
+
+      {/* {artists.map((artists) => (
         <Artist key={artists.id} artists={artists} />
-      ))}
+      ))} */}
     </Layout>
   );
 }
