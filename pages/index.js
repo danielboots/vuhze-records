@@ -26,7 +26,7 @@ export default function HomePage({
     <Layout>
       <Aboutblock />
 
-      {/* <div className="box">
+      <div className="box">
         <h3>Artists</h3>
         {artists.length === 0 && <h3>No Artists to show</h3>}
         {artists.map((artist) => (
@@ -44,7 +44,7 @@ export default function HomePage({
             <a className="btn-secondary">View All Artists</a>
           </Link>
         )}
-      </div> */}
+      </div>
 
       <div className="shadow p-3 mb-5 bg-white rounded">
         <h4 className="text-center text-uppercase">
