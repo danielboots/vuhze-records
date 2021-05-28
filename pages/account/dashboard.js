@@ -29,16 +29,16 @@ export default function DashboardPage({ events, token }) {
 
   return (
     <Layout title="User Dashboard">
-      <div className={styles.dash}>
-        <h1>Dashboard</h1>
-        <h3>My Events</h3>
-
-        <button className="btn-secondary btn-icon">
-          <a href="/events/add"> ADD EVENT</a>
-        </button>
+      <div className="">
+        <h3 className="">
+          <strong>Dashboard</strong>
+        </h3>
+        <h4>
+          <strong>My Events</strong>
+        </h4>
 
         {events.map((evt) => (
-          <h3>{evt.name}</h3>
+          <DashboardEvent key={evt.id} evt={evt} handleDelete={deleteEvent} />
         ))}
       </div>
     </Layout>
