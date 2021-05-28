@@ -51,7 +51,7 @@ export default function HomePage({
           <strong>Latest Release :</strong>
         </h4>
         <h5 className="text-center text-danger"> {releases[0].artist}</h5>
-        <h6 className="text-center text-danger">{releases[0].release}</h6>
+        <h6 className="></div>text-center text-danger">{releases[0].code}</h6>
       </div>
       {releases.length === 0 && <h3>No Releases</h3>}
       {releases.map((releases) => (
