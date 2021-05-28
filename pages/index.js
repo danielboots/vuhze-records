@@ -3,6 +3,8 @@ import Layout from "@/components/Layout";
 import EventItem from "@/components/EventItem";
 import NewsItem from "@/components/NewsItem";
 import ReleaseItem from "@/components/ReleaseItem";
+import Artist from "@/components/Artist";
+
 import StudioItem from "@/components/StudioItem";
 import Aboutblock from "@/components/Aboutblock";
 
@@ -24,6 +26,23 @@ export default function HomePage({
   return (
     <Layout>
       <Aboutblock />
+
+      <div className="shadow p-3 mb-5 bg-white rounded">
+        <h4 className="text-center text-uppercase">
+          <strong>Artist Spotlight :</strong>
+        </h4>
+      </div>
+      {artists.length === 0 && <h3>No Artists</h3>}
+      {artists.map((artists) => (
+        <Artist key={artists.id} artists={artists} />
+      ))}
+      {artists.length > 0 && (
+        <div className="m-3 text-left ">
+          <Link href="/news">
+            <a className="btn-secondary ">View Artists</a>
+          </Link>
+        </div>
+      )}
 
       <div className="shadow p-3 mb-5 bg-white rounded">
         <h4 className="text-center text-uppercase">
@@ -145,10 +164,10 @@ export async function getServerSideProps() {
   const [eventRes, artistRes, releaseRes, newsitemRes, studioRes] =
     await Promise.all([
       await fetch(`${API_URL}/events?_sort=date:ASC&_limit=1`),
-      await fetch(`${API_URL}/artists?_limit=3`),
-      await fetch(`${API_URL}/releases?_limit=3`),
-      await fetch(`${API_URL}/newsitems?_limit=3`),
-      await fetch(`${API_URL}/studios?_limit=2`),
+      await fetch(`${API_URL}/artists?_limit=1`),
+      await fetch(`${API_URL}/releases?_limit=1`),
+      await fetch(`${API_URL}/newsitems?_limit=2`),
+      await fetch(`${API_URL}/studios?_limit=1`),
     ]);
   const [events, artists, releases, newsitems, studios] = await Promise.all([
     eventRes.json(),
