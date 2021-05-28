@@ -26,6 +26,11 @@ export default function Header() {
             </Link>
           </li>
           <li className={`${styles.hovernav} ${styles.navlink}`}>
+            <Link href="/team">
+              <a>team</a>
+            </Link>
+          </li>
+          <li className={`${styles.hovernav} ${styles.navlink}`}>
             <Link href="/releases">
               <a>Releases</a>
             </Link>
