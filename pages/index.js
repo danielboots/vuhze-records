@@ -25,26 +25,6 @@ export default function HomePage({
     <Layout>
       <Aboutblock />
 
-      <div className="box">
-        <h3>Artists</h3>
-        {artists.length === 0 && <h3>No Artists to show</h3>}
-        {artists.map((artist) => (
-          <div>
-            <p key={artist.id} artist={artist}>
-              <strong>{artist.name}</strong> <br />
-              {artist.genre}
-            </p>
-
-            <img className="w-25 " src={artist.image.formats.small.url} />
-          </div>
-        ))}
-        {artists.length > 0 && (
-          <Link href="/artists">
-            <a className="btn-secondary">View All Artists</a>
-          </Link>
-        )}
-      </div>
-
       <div className="shadow p-3 mb-5 bg-white rounded">
         <h4 className="text-center text-uppercase">
           <strong>Latest Release :</strong>
