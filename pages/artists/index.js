@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import Artist from "@/components/Artist";
-import styles from "@/styles/artists.module.css";
+import styles from "@/styles/Artists.module.css";
 import { API_URL } from "@/config/index";
 
 export default function ArtistsPage({ artists }) {
