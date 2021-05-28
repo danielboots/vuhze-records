@@ -5,7 +5,6 @@ import NewsItem from "@/components/NewsItem";
 import ReleaseItem from "@/components/ReleaseItem";
 import StudioItem from "@/components/StudioItem";
 import Aboutblock from "@/components/Aboutblock";
-import ArtistItem from "@/components/ArtistItem";
 
 import { API_URL } from "@/config/index";
 

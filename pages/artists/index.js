@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import ArtistItem from "@/components/ArtistItem";
+// import ArtistItem from "@/components/ArtistItem";
 import styles from "@/styles/Artists.module.css";
 import { API_URL } from "@/config/index";
 
@@ -16,9 +16,9 @@ export default function ArtistsPage({ artists }) {
 
       <div className={styles.container}></div>
       {artists.length === 0 && <h3>No Artists</h3>}
-      {artists.map((artists) => (
-        <ArtistItem key={artists.id} artists={artists} />
-      ))}
+      {artists.map((artists) => ({
+        /* <ArtistItem key={artists.id} artists={artists} /> */
+      }))}
     </Layout>
   );
 }
