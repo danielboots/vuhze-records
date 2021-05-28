@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-// import ArtistItem from "@/components/ArtistItem";
+import Artist from "@/components/Artist";
 import styles from "@/styles/Artists.module.css";
 import { API_URL } from "@/config/index";
 
@@ -15,9 +15,11 @@ export default function ArtistsPage({ artists }) {
       </div>
 
       <div className={styles.container}></div>
-      {artists.length === 0 && <h3>No Artists</h3>}
+      {releases.length === 0 && <h3>No artists</h3>}
 
-      <h1>deploy fix!</h1>
+      {artists.map((artists) => (
+        <Artist key={artists.id} artists={artists} />
+      ))}
     </Layout>
   );
 }
