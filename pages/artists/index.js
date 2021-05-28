@@ -16,9 +16,8 @@ export default function ArtistsPage({ artists }) {
 
       <div className={styles.container}></div>
       {artists.length === 0 && <h3>No Artists</h3>}
-      {artists.map((artists) => ({
-        /* <ArtistItem key={artists.id} artists={artists} /> */
-      }))}
+
+      <h1>deploy fix!</h1>
     </Layout>
   );
 }
