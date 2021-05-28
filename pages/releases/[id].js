@@ -32,7 +32,7 @@ export default function ReleasePage({ release }) {
           <div>
             <img
               className="img-fluid rounded mx-auto d-block"
-              src={release.artwork.formats.medium.url}
+              src={release.artwork.formats.thumbnail.url}
             />
           </div>
         )}
