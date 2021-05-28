@@ -20,11 +20,11 @@ export default function Header() {
 
       <nav>
         <ul>
-          {/* <li className={`${styles.hovernav} ${styles.navlink}`}>
+          <li className={`${styles.hovernav} ${styles.navlink}`}>
             <Link href="/artists">
               <a>Artists</a>
             </Link>
-          </li> */}
+          </li>
 
           <li className={`${styles.hovernav} ${styles.navlink}`}>
             <Link href="/releases">
