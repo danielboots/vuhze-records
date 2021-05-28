@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import EventItem from "@/components/EventItem";
-import ArtistItem from "@/components/ArtistItem";
 import NewsItem from "@/components/NewsItem";
 import ReleaseItem from "@/components/ReleaseItem";
 import StudioItem from "@/components/StudioItem";
