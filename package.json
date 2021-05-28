@@ -1,16 +1,14 @@
 {
-  "name": "dj-events-frontend",
+  "name": "intimacy-records",
   "version": "0.1.0",
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   },
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p $PORT",
-    "heroku-postbuild": "npm run build"
-    
+    "start": "next start"
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
