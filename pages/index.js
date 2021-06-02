@@ -27,7 +27,7 @@ export default function HomePage({
     <Layout>
       <Aboutblock />
 
-      <div className="shadow p-3 mb-5 bg-white rounded">
+      <div className=" shadow p-3 mb-5 bg-white rounded">
         <h4 className="text-center text-uppercase">
           <strong>Artist Spotlight :</strong>
         </h4>
