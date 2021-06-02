@@ -1,5 +1,13 @@
 import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 import { useContext } from "react";
+import {
+  Button,
+  Navbar,
+  Nav,
+  NavItem,
+  NavDropdown,
+  MenuItem,
+} from "react-bootstrap";
 import Link from "next/link";
 import Search from "./Search";
 import AuthContext from "@/context/AuthContext";
@@ -9,16 +17,65 @@ export default function Header() {
   const { user, logout } = useContext(AuthContext);
 
   return (
-    <header className={styles.header}>
-      <div className={styles.logo}>
-        <Link href="/">
-          <a>INTIMACY Records</a>
-        </Link>
-      </div>
+    <Navbar
+      collapseOnSelect
+      className={styles.Navbar}
+      expand="lg"
+      bg=""
+      fixed="top"
+      variant="dark"
+    >
+      <Navbar.Brand className={styles.logo}>
+        <Nav.Link>
+          <Link href="/">
+            <a className={styles.navitem}>
+              <strong className="text-uppercase">Intimacy Records</strong>
+            </a>
+          </Link>
+        </Nav.Link>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="navbar-nav ml-auto ">
+          <Nav.Link>
+            <Link href="/artists">
+              <a>Artists</a>
+            </Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link href="/releases">
+              <a>Releases</a>
+            </Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link href="/news">
+              <a>News</a>
+            </Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link href="/events">
+              <a>Events</a>
+            </Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link href="/studios">
+              <a>Services</a>
+            </Link>
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
 
-      {/* <Search /> */}
+    // <header className={styles.header}>
+    //   <div className={styles.logo}>
+    //     <Link href="/">
+    //       <a>INTIMACY Records</a>
+    //     </Link>
+    //   </div>
 
-      <nav>
+    /* <Search /> */
+
+    /* <nav>
         <ul>
           <li className={`${styles.hovernav} ${styles.navlink}`}>
             <Link href="/artists">
@@ -46,8 +103,8 @@ export default function Header() {
             <Link href="/studios">
               <a>Studios</a>
             </Link>
-          </li>
-          {/* {user ? (
+          </li> */
+    /* {user ? (
             // If logged in
             <>
               <li className={`${styles.hovernav} ${styles.navlink}`}>
@@ -75,9 +132,9 @@ export default function Header() {
                 </Link>
               </li>
             </>
-          )} */}
-        </ul>
+          )} */
+    /* </ul>
       </nav>
-    </header>
+    </header> */
   );
 }

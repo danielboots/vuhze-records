@@ -3,35 +3,44 @@
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  color: #333;
+  color: white;
   height: 60px;
   padding: 0 30px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.header a {
-  color: #333;
-  margin-right: 20px;
+.Navbar {
+  background-color: #1f2937;
 }
 
-.header a:hover {
-  color: #000;
-}
-.header ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
+.navitem {
+  color: white;
 }
 
-.logo {
-  color: slategrey;
-  font-size: 20px;
-  text-transform: uppercase;
+.hover-nav {
+  transition: 0.3s;
 }
 
-.logo a {
-  color: slategray;
+.hover-nav:hover {
+  transform: translate(0, -2px);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: white;
+}
+
+.dropdown-menu {
+  background-color: #12192cf2 !important;
+}
+
+.bg-dark {
+  background-color: transparent !important;
+}
+
+.bg-dark.scrolled {
+  background-color: #12192cf2 !important;
+  transition: 0.75s ease;
 }
 
 @media (max-width: 768px) {
