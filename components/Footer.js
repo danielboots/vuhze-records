@@ -18,7 +18,8 @@ export default function Footer() {
             <FaTwitter className="m-3 hoverup " />
           </a>
         </div>
-        <p className="py-3 hoverup">Copyright &copy; INTIMACY RECORDS 2021</p>
+        <p className="p-3 hoverup">Copyright &copy; INTIMACY RECORDS 2021</p>
+        <p className="p-3 hoverup">Share it, Sing it, Shout it.</p>
       </div>
     </footer>
   );

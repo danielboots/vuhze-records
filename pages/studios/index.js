@@ -9,7 +9,7 @@ export default function StudiosPage({ studios }) {
     <Layout>
       <div className={styles.herohome}>
         <h1 className="brand-font text-uppercase text-center">
-          <strong>Studios / Services</strong>
+          <strong>Studios</strong>
         </h1>
         <div className={styles.container}></div>
       </div>

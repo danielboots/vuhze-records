@@ -2,7 +2,7 @@
   background: url("/images/hero.png") no-repeat center center fixed;
   background-size: cover;
   margin: auto;
-  height: 40vh;
+  height: 80vh;
   background-attachment: fixed;
   color: #ffffff;
   position: relative;
@@ -76,6 +76,16 @@
     background-attachment: fixed;
 
     text-align: center;
+  }
+
+  .herohome {
+    background: url("/images/hero.png") no-repeat center center fixed;
+    background-size: cover;
+    margin: auto;
+    height: 40vh;
+    background-attachment: fixed;
+    color: #ffffff;
+    position: relative;
   }
 
   .showcase::after {
