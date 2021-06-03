@@ -1,6 +1,6 @@
 .herohome {
   background: url("/images/hero.png") no-repeat center center fixed;
-  /* background-size: cover; */
+  background-size: cover;
   margin: auto;
   height: 20vh;
   background-attachment: fixed;
@@ -19,7 +19,7 @@
   background-color: #05101f69;
 }
 
-.image {
+/* .image {
   max-height: 400px;
 }
 
@@ -56,4 +56,4 @@
 .back {
   display: block;
   margin-top: 40px;
-}
+} */

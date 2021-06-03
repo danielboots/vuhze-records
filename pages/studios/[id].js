@@ -1,8 +1,7 @@
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaPencilAlt, FaTimes } from "react-icons/fa";
 import Link from "next/link";
-import Image from "next/image";
+
 import Layout from "@/components/Layout";
 import StudioMap from "@/components/StudioMap";
 import {
@@ -16,6 +15,8 @@ import {
   FaRegNewspaper,
   FaCalendarAlt,
 } from "react-icons/fa";
+
+import { Container, Row, Col, Image } from "react-bootstrap";
 
 import { API_URL } from "@/config/index";
 import styles from "@/styles/Studio.module.css";
@@ -46,7 +47,47 @@ export default function StudioItemPage({ studio }) {
           <strong>Gallery:</strong>
         </h4>
 
-        <div className={styles.row}>
+        <Container>
+          <Row>
+            <Col xs={12} md={6} lg={3}>
+              <Image
+                layout="fill"
+                src={studio.gallery[0].formats.small.url}
+                fluid="true"
+              />
+            </Col>
+            <Col xs={12} md={6} lg={3}>
+              <Image
+                layout="fill"
+                src={studio.gallery[1].formats.small.url}
+                fluid="true"
+              />
+            </Col>
+            <Col xs={12} md={6} lg={3}>
+              <Image
+                layout="fill"
+                src={studio.gallery[2].formats.small.url}
+                fluid="true"
+              />
+            </Col>
+            <Col xs={12} md={6} lg={3}>
+              <Image
+                layout="fill"
+                src={studio.gallery[3].formats.small.url}
+                fluid="true"
+              />
+            </Col>
+            <Col xs={12} md={6} lg={3}>
+              <Image
+                layout="fill"
+                src={studio.gallery[4].formats.small.url}
+                fluid="true"
+              />
+            </Col>
+          </Row>
+        </Container>
+
+        {/* <div className={styles.row}>
           <div className={styles.column}>
             <img src={studio.gallery[0].formats.small.url} alt="image1" />
             <img src={studio.gallery[1].formats.small.url} alt="image2" />
@@ -54,7 +95,7 @@ export default function StudioItemPage({ studio }) {
             <img src={studio.gallery[3].formats.small.url} alt="image4" />
             <img src={studio.gallery[4].formats.small.url} alt="image5" />
           </div>
-        </div>
+        </div> */}
 
         <div className="my-5">
           <h4 className="text-uppercase">
