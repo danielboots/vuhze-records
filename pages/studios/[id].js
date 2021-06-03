@@ -16,7 +16,7 @@ import {
   FaCalendarAlt,
 } from "react-icons/fa";
 
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col, Image, Carousel } from "react-bootstrap";
 
 import { API_URL } from "@/config/index";
 import styles from "@/styles/Studio.module.css";
@@ -48,7 +48,7 @@ export default function StudioItemPage({ studio }) {
         </h4>
 
         <Container>
-          <Row>
+          <Row className="text-center">
             <Col xs={12} md={6} lg={3}>
               <Image
                 layout="fill"
