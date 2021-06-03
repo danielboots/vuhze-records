@@ -22,14 +22,13 @@ export default function Header() {
       className={styles.Navbar}
       expand="lg"
       bg=""
-      fixed="top"
-      variant="dark"
+      fixed=""
     >
       <Navbar.Brand className={styles.logo}>
         <Nav.Link>
           <Link href="/">
-            <a className={styles.navitem}>
-              <strong className="text-uppercase">Intimacy Records</strong>
+            <a>
+              <strong className={styles.NavBrand}>Intimacy Records</strong>
             </a>
           </Link>
         </Nav.Link>
@@ -37,31 +36,25 @@ export default function Header() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="navbar-nav ml-auto ">
-          <Nav.Link>
-            <Link href="/artists">
-              <a>Artists</a>
-            </Link>
-          </Nav.Link>
-          <Nav.Link>
-            <Link href="/releases">
-              <a>Releases</a>
-            </Link>
-          </Nav.Link>
-          <Nav.Link>
-            <Link href="/news">
-              <a>News</a>
-            </Link>
-          </Nav.Link>
-          <Nav.Link>
-            <Link href="/events">
-              <a>Events</a>
-            </Link>
-          </Nav.Link>
-          <Nav.Link>
-            <Link href="/studios">
-              <a>Services</a>
-            </Link>
-          </Nav.Link>
+          <Link href="/artists">
+            <a className={styles.NavItem}>Artists</a>
+          </Link>
+
+          <Link href="/releases">
+            <a className={styles.NavItem}>Releases</a>
+          </Link>
+
+          <Link href="/news">
+            <a className={styles.NavItem}>News</a>
+          </Link>
+
+          <Link href="/events">
+            <a className={styles.NavItem}>Events</a>
+          </Link>
+
+          <Link href="/studios">
+            <a className={styles.NavItem}>Services</a>
+          </Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

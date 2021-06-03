@@ -1,99 +1,30 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-  color: white;
-  height: 60px;
-  padding: 0 30px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.Navbar {
-  background-color: #1f2937;
-}
-
-.navitem {
-  color: white;
-}
-
-.hover-nav {
-  transition: 0.3s;
-}
-
-.hover-nav:hover {
-  transform: translate(0, -2px);
-}
-
 .nav-link {
-  font-weight: 500;
-  color: white;
+  padding: 0px;
 }
 
-.dropdown-menu {
-  background-color: #12192cf2 !important;
+.NavBrand {
+  color: #555555;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
-.bg-dark {
-  background-color: transparent !important;
-}
+.NavItem {
+  color: #555555;
+  margin-right: 5px;
 
-.bg-dark.scrolled {
-  background-color: #12192cf2 !important;
-  transition: 0.75s ease;
-}
-
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .header ul {
-    margin: 20px 0;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .header a {
-    margin-right: 0;
-  }
-
-  .logo {
-    margin: 20px 0;
-  }
-}
-
-.hovernav {
-  transition: 0.3s;
-}
-
-.hovernav:hover {
-  transform: translate(0, -2px);
-}
-
-.navlink {
   font-weight: 600;
+  text-decoration: none;
 }
 
-.dropdownmenu {
-  background-color: #12192cf2 !important;
+.NavBrand:hover {
+  color: #555555;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
-.bgdark {
-  background-color: transparent !important;
-}
+.NavItem:hover {
+  color: #555555;
 
-.bgdark.scrolled {
-  background-color: #12192cf2 !important;
-  transition: 0.75s ease;
-}
-
-@media (max-width: 991px) {
-  .bgdark {
-    background: #12192c !important;
-  }
-  .bgdark.scrolled {
-    background-color: #12192c !important;
-  }
+  font-weight: 600;
+  text-decoration: none;
 }

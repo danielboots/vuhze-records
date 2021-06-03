@@ -25,11 +25,6 @@ body {
   color: white;
 }
 
-a {
-  text-decoration: none;
-  color: steelblue;
-}
-
 p {
   margin: 10px 0;
 }
@@ -141,7 +136,7 @@ h1 {
   color: whitesmoke;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 960px) {
   .box {
     flex-direction: column;
     text-align: center;
@@ -149,5 +144,16 @@ h1 {
 
   .info {
     margin-bottom: 20px;
+  }
+
+  .brand-font {
+    font-family: "Josefin Sans", sans-serif;
+    line-height: 1.8;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    right: 10%;
+    color: white;
+    font-size: small;
   }
 }

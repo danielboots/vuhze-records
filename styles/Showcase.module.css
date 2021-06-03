@@ -1,6 +1,6 @@
 .herohome {
   background: url("/images/hero.png") no-repeat center center fixed;
-  /* background-size: cover; */
+  background-size: cover;
   margin: auto;
   height: 40vh;
   background-attachment: fixed;
@@ -61,7 +61,7 @@
   justify-content: flex-end;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 960px) {
   .showcase {
     height: 300px;
     width: 100%;
