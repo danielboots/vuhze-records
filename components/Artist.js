@@ -12,11 +12,9 @@ export default function Artist({ artists }) {
               ? artists.image.formats.small.url
               : "/images/event-default.png"
           }
-          layout="intrinsic"
-          objectFit="contain"
-          quality={65}
-          width={200}
-          height={200}
+          layout="fixed"
+          width={150}
+          height={150}
         />
       </div>
 
@@ -39,7 +37,7 @@ export default function Artist({ artists }) {
 
       <div className={styles.link}>
         <Link href={`/artists/${artists.artist_id}`}>
-          <a className="btn btn-secondary btn-sm">View Artist</a>
+          <a className="btn btn-secondary btn-sm ">View Artist</a>
         </Link>
       </div>
     </div>
