@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import Artist from "@/components/Artist";
 import styles from "@/styles/Artists.module.css";
 import { API_URL } from "@/config/index";
+import { Container, Row, Col } from "react-bootstrap";
 
 export default function ArtistsPage({ artists }) {
   return (
@@ -14,10 +15,15 @@ export default function ArtistsPage({ artists }) {
       </div>
 
       {artists.length === 0 && <h3>No artists</h3>}
-
-      {artists.map((artists) => (
-        <Artist key={artists.id} artists={artists} />
-      ))}
+      <Container fluid="true" className="m-3">
+        <Row className="show-grid">
+          {artists.map((artists) => (
+            <Col xs={12} md={12} lg={6}>
+              <Artist key={artists.id} artists={artists} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </Layout>
   );
 }

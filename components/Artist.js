@@ -25,11 +25,14 @@ export default function Artist({ artists }) {
           <strong>Artist:</strong> {artists.name}
         </h5>
         <p>
-          <strong>Title:</strong> {artists.genre}
+          <strong>Genre:</strong>
+          <span className="text-danger">
+            <strong> {artists.genre}</strong>
+          </span>
         </p>
-        <p>
+        {/* <p>
           <strong>Extract:</strong> {artists.tagline}
-        </p>
+        </p> */}
 
         <span className={`${styles.genre} ${styles.hoverup}`}></span>
       </div>

@@ -25,7 +25,7 @@ export default function ArtistPage({ artist }) {
         <h3 className="text-uppercase text-center">
           Intimacy Records {artist.name}: <br />
         </h3>
-        <p>{artist.tagline}</p>
+        <p className="text-center"> {artist.tagline}</p>
 
         <ToastContainer />
         {artist.image && (
