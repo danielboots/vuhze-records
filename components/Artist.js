@@ -12,11 +12,11 @@ export default function Artist({ artists }) {
               ? artists.image.formats.small.url
               : "/images/event-default.png"
           }
-          layout="responsive"
+          layout="intrinsic"
           objectFit="contain"
           quality={65}
-          width={100}
-          height={100}
+          width={200}
+          height={200}
         />
       </div>
 

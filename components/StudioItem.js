@@ -12,11 +12,11 @@ export default function StudioItem({ studios }) {
               ? studios.image.formats.medium.url
               : "/images/event-default.png"
           }
-          layout="responsive"
+          layout="intrinsic"
           objectFit="contain"
           quality={65}
-          width={100}
-          height={100}
+          width={200}
+          height={200}
         />
       </div>
 
