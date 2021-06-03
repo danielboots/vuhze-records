@@ -63,13 +63,13 @@ export default function HomePage({
       {artists.map((artists) => (
         <Artist key={artists.id} artists={artists} />
       ))}
-      {artists.length > 0 && (
+      {/* {artists.length > 0 && (
         <div className="m-3 text-left ">
           <Link href="/news">
             <a className="btn-secondary ">View Artists</a>
           </Link>
         </div>
-      )}
+      )} */}
 
       <div className="shadow p-3 mb-5 bg-white rounded">
         <h4 className="text-center text-uppercase">
@@ -82,13 +82,13 @@ export default function HomePage({
       {releases.map((releases) => (
         <ReleaseItem key={releases.id} releases={releases} />
       ))}
-      {releases.length > 0 && (
+      {/* {releases.length > 0 && (
         <div className="m-3 text-left ">
           <Link href="/news">
             <a className="btn-secondary ">All Releases</a>
           </Link>
         </div>
-      )}
+      )} */}
 
       <div className="shadow p-3 mb-5 brandbg rounded whitefont ">
         <h4 className="text-center text-uppercase ">
@@ -116,13 +116,13 @@ export default function HomePage({
       {newsitems.map((newsitems) => (
         <NewsItem key={newsitems.id} newsitems={newsitems} />
       ))}
-      {newsitems.length > 0 && (
+      {/* {newsitems.length > 0 && (
         <div className="m-3 text-left ">
           <Link href="/news">
             <a className="btn-secondary">All News</a>
           </Link>
         </div>
-      )}
+      )} */}
 
       <div className="shadow p-3 mb-5 brandbg rounded whitefont ">
         <h4 className="text-center text-uppercase ">
@@ -160,13 +160,13 @@ export default function HomePage({
       {events.map((evt) => (
         <EventItem key={evt.id} evt={evt} />
       ))}
-      {events.length > 0 && (
+      {/* {events.length > 0 && (
         <div className="m-3 text-left ">
           <Link href="/events">
             <a className="btn-secondary">View All Events</a>
           </Link>
         </div>
-      )}
+      )} */}
 
       <div className="shadow p-3 mb-5 bg-white rounded">
         <h4 className="text-center text-uppercase">
