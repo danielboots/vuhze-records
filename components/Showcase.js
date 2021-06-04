@@ -5,6 +5,7 @@ export default function Showcase() {
   return (
     <div className={styles.herohome}>
       <h1 className="brand-font"> INTIMACY RECORDS</h1>
+
       <div className={styles.container}></div>
     </div>
   );
