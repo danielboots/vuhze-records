@@ -8,6 +8,8 @@
 
 .NavBrand {
   color: #555555;
+  font-weight: 200;
+  font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
   text-decoration: none;
   transition: 0.3s;
@@ -15,7 +17,7 @@
 
 .NavItem {
   color: #555555;
-  margin: 15px;
+  margin: 5px;
   padding: 5px;
 
   font-weight: 600;

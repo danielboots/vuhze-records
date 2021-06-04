@@ -17,6 +17,8 @@ body {
 
 .brand-font {
   font-family: "Josefin Sans", sans-serif;
+  font-weight: 100;
+
   line-height: 1.8;
   position: absolute;
   top: 40%;
