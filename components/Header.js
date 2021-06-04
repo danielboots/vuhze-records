@@ -28,7 +28,7 @@ export default function Header() {
         <Nav.Link>
           <Link href="/">
             <a>
-              <strong className={styles.NavBrand}>Intimacy Records</strong>
+              <strong className={styles.NavBrand}>[IR]</strong>
             </a>
           </Link>
         </Nav.Link>
