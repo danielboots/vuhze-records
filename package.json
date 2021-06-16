@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
@@ -22,8 +21,5 @@
     "react-map-gl": "^6.1.15",
     "react-toastify": "^7.0.3"
   },
-  "devDependencies": {
-    "eslint": "^7.28.0",
-    "eslint-config-next": "^11.0.0"
-  }
+  "devDependencies": {}
 }
