@@ -26,32 +26,6 @@ export default function HomePage({
 
   return (
     <Layout>
-      {/* <Container fluid="true" className="m-3">
-        <Row className="show-grid">
-          <Col className=" text-center bg-white rounded  p-3  mb-3">
-            1 of 1 TEST Responsive Bootstrap Container
-          </Col>
-        </Row>
-        <Row>
-          <Col
-            xs={12}
-            md={12}
-            lg={6}
-            className="text-center bg-white rounded p-3"
-          >
-            1 of 2 TEST Responsive Bootstrap Container
-          </Col>
-          <Col
-            xs={12}
-            md={12}
-            lg={6}
-            className=" text-center bg-white rounded p-3  "
-          >
-            2 of 2 TEST Responsive Bootstrap Container 2
-          </Col>
-        </Row>
-      </Container> */}
-
       <Aboutblock />
 
       <div className=" shadow p-3 mb-5 bg-white rounded">
@@ -173,12 +147,9 @@ export default function HomePage({
           <strong>Proudly Distributed by</strong>
         </h4>
         <div className="container">
-          <div className="item ">
-            <img className="dist" src="images/sony.png" alt="" />
-          </div>
-          <div className="item">
-            <img className="dist" src="images/orchard.jpg" alt="" />
-          </div>
+          <img className="dist" src="images/sony.png" alt="" />
+
+          <img className="dist" src="images/orchard.jpg" alt="" />
         </div>
       </div>
     </Layout>
