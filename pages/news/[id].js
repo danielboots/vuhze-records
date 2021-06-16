@@ -17,7 +17,7 @@ import {
 } from "react-icons/fa";
 
 import { API_URL } from "@/config/index";
-import styles from "@/styles/NewsItem.module.css";
+import styles from "@/styles/Event.module.css";
 import { useRouter } from "next/router";
 
 export default function NewsItemPage({ newsitem }) {
@@ -26,17 +26,16 @@ export default function NewsItemPage({ newsitem }) {
   return (
     <Layout>
       <div className={styles.event}>
-        <span></span>
-        <h2 className="text-center text-uppercase">{newsitem.headline}</h2>
+        <h1 className="text-center">{newsitem.headline}</h1>
         <ToastContainer />
         {newsitem.image && (
-          <div className="rounded mx-auto d-block">
-            <img src={newsitem.image.formats.small.url} />
+          <div className={styles.image}>
+            <img
+              className="img-fluid rounded mx-auto d-block"
+              src={newsitem.image.url}
+            />
           </div>
         )}
-        <div>
-          <br />
-        </div>
 
         <p className="text-justify">{newsitem.writeup}</p>
         <p className="text-danger text-center">

@@ -15,15 +15,10 @@ export default function ArtistsPage({ artists }) {
       </div>
 
       {artists.length === 0 && <h3>No artists</h3>}
-      <Container fluid="true" className="m-3">
-        <Row className="show-grid">
-          {artists.map((artists) => (
-            <Col xs={12} md={12} lg={6}>
-              <Artist key={artists.id} artists={artists} />
-            </Col>
-          ))}
-        </Row>
-      </Container>
+
+      {artists.map((artists) => (
+        <Artist key={artists.id} artists={artists} />
+      ))}
     </Layout>
   );
 }

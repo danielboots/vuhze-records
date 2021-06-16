@@ -7,6 +7,7 @@ export default function Artist({ artists }) {
     <div className={styles.event}>
       <div className={styles.img}>
         <Image
+          className="rounded shadow-lg "
           src={
             artists.image
               ? artists.image.formats.small.url
@@ -28,9 +29,9 @@ export default function Artist({ artists }) {
             <strong> {artists.genre}</strong>
           </span>
         </p>
-        {/* <p>
+        <p>
           <strong>Extract:</strong> {artists.tagline}
-        </p> */}
+        </p>
 
         <span className={`${styles.genre} ${styles.hoverup}`}></span>
       </div>
