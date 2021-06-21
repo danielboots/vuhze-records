@@ -32,7 +32,7 @@ export default function NewsItemPage({ newsitem }) {
           <div className={styles.image}>
             <img
               className="img-fluid rounded mx-auto d-block"
-              src={newsitem.image.url}
+              src={newsitem.image.formats.medium.url}
             />
           </div>
         )}
