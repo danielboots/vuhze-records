@@ -7,6 +7,7 @@ export default function EventItem({ evt }) {
     <div className={styles.event}>
       <div className={styles.img}>
         <Image
+          className="rounded shadow-lg "
           src={
             evt.image
               ? evt.image.formats.thumbnail.url

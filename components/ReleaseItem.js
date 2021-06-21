@@ -7,6 +7,7 @@ export default function ReleaseItem({ releases }) {
     <div className={styles.event}>
       <div className={styles.img}>
         <Image
+          className="rounded shadow-lg "
           src={
             releases.artwork
               ? releases.artwork.formats.thumbnail.url

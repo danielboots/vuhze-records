@@ -71,7 +71,7 @@ export default function HomePage({
         <div className="container p-4 ">
           <iframe
             width="100%"
-            height=""
+            height="400px"
             src="https://www.youtube.com/embed/a-2kSM1mmBM"
             title="YouTube video player"
             frameBorder="0"

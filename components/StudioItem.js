@@ -7,6 +7,7 @@ export default function StudioItem({ studios }) {
     <div className={styles.event}>
       <div className={styles.img}>
         <Image
+          className="rounded shadow-lg "
           src={
             studios.image
               ? studios.image.formats.medium.url

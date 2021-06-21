@@ -7,6 +7,7 @@ export default function NewsItem({ newsitems }) {
     <div className={styles.event}>
       <div className={styles.img}>
         <Image
+          className="rounded shadow-lg "
           src={
             newsitems.image
               ? newsitems.image.formats.small.url
